@@ -152,7 +152,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo">NEGUINHO<span> MOTORS</span></a>
+    <a href="#" class="nav-logo"><img src="imagens/imagens/LOGO_OFICIAL.webp" alt="Neguinho Motors" style="height:38px;width:auto;" onerror="this.outerHTML='NEGUINHO <span>MOTORS</span>'"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#" onclick="setFilter('todos',this);return false;" class="active">Catálogo</a></li>
       <li><a href="#" onclick="setFilter('volkswagen',this);return false;">Volkswagen</a></li>
@@ -185,7 +185,7 @@
   <div class="header-inner">
     <div>
       <div class="logo-tag">Catálogo Completo</div>
-      <div class="logo-title">NEGUINHO<span> MOTORS</span></div>
+      <div class="logo-title"><span>2026</span></div>
       <div class="logo-sub">Veículos selecionados com qualidade garantida</div>
     </div>
     <div class="stats-row">
@@ -252,38 +252,38 @@
 
 <script>
 const vehicles = [
-  {brand:"Ford",      bk:"ford",       model:"FOCUS TI AT 2.0 H",   year:"2014/2015", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:"Importado", classic:false, img:"imagens/focus.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"GOL TL",               year:"2018/2018", color:"Cinza",   hex:"#9ba3b0", fuel:"flex",     extra:null,        classic:false, img:"imagens/gol.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"SAVEIRO 1.6 SURF",     year:"2009/2010", color:"Vermelha",hex:"#c0392b", fuel:"flex",     extra:null,        classic:false, img:"imagens/saveiro surf.jpeg"},
-  {brand:"GM",        bk:"chevrolet",  model:"S10 ADVANTAGE S",      year:"2009/2009", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/s10.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"FUSCA 1500",           year:"1972/1972", color:"Verde",   hex:"#27ae60", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/fusca.webp"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"KOMBI",                year:"2011/2012", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/kombi.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"GOL GLS 2.0 MI",      year:"1998/1998", color:"Cinza",   hex:"#9ba3b0", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/golgls2.0mi.jpg"},
-  {brand:"Mitsubishi",bk:"mitsubishi", model:"PAJERO TR4 FLEX HP",  year:"2013/2013", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/pajero.webp"},
-  {brand:"Renault",   bk:"outros",     model:"DUSTER 16 E 4X2",     year:"2012/2013", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/duster.jpeg"},
-  {brand:"Chevrolet", bk:"chevrolet",  model:"ONIX 1.4 LT",         year:"2016/2017", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:"Vendido",        classic:false, img:"imagens/onix.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"FOX ROCK RIO MB",     year:"2015/2016", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:"Ed. Especial",classic:false,img:"imagens/fox.jpeg"},
-  {brand:"Peugeot",   bk:"outros",     model:"504 GRD",             year:"1995/1996", color:"Vermelha",hex:"#c0392b", fuel:"diesel",   extra:null,        classic:true,  img:"imagens/peugeot504.webp"},
-  {brand:"Fiat",      bk:"fiat",       model:"PUNTO ATTRACTIVE",    year:"2016/2016", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/puntoprata.jpeg"},
-  {brand:"Fiat",      bk:"fiat",       model:"PUNTO ATTRACTIVE",    year:"2011/2011", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/puntopreto.webp"},
-  {brand:"BMW",       bk:"outros",     model:"X1 SDRIVE 1.8I",      year:"2011/2011", color:"Preta",   hex:"#1a1a1a", fuel:"gasolina", extra:null,        classic:false, img:"imagens/bmwx1.jpg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"VOYAGE MPI",          year:"2022/2023", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/voyagempi.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"JETTA HL AE",         year:"2016/2016", color:"Branca",  hex:"#f0f2f5", fuel:"gasolina", extra:null,        classic:false, img:"imagens/jetta.jpeg"},
-  {brand:"Chevrolet", bk:"chevrolet",  model:"CRUZE LT NB",         year:"2012/2012", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/cruze.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"GOL 1.0 NOVO",        year:"2013/2013", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/novo gol.jpeg"},
-  {brand:"Mitsubishi",bk:"mitsubishi", model:"ASX 2.0 4WD",         year:"2013/2013", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/asx.jpeg"},
-  {brand:"GM",        bk:"chevrolet",  model:"CELTA 2P SPIRIT",     year:"2007/2008", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/celta.jpeg"},
-  {brand:"Kia Motors",bk:"outros",     model:"UK2500 HD SC",        year:"2013/2014", color:"Branca",  hex:"#f0f2f5", fuel:"diesel",   extra:null,        classic:false, img:"imagens/kia_uk2500.jpeg"},
-  {brand:"Hyundai",   bk:"outros",     model:"TUCSON GLSB",         year:"2012/2013", color:"Prata",   hex:"#c0c8d0", fuel:"gasolina", extra:null,        classic:false, img:"imagens/tucson.jpeg"},
-  {brand:"GM",        bk:"chevrolet",  model:"MERIVA PREMIUM",      year:"2010/2011", color:"Verde",   hex:"#27ae60", fuel:"flex",     extra:null,        classic:false, img:"imagens/meriva.jpeg"},
-  {brand:"GM",        bk:"chevrolet",  model:"MERIVA PREMIUM",      year:"2008/2008", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/meriva preto.jpeg"},
-  {brand:"Chevrolet", bk:"chevrolet",  model:"AGILE LTZ",           year:"2012/2013", color:"Cinza",   hex:"#9ba3b0", fuel:"flex",     extra:null,        classic:false, img:"imagens/agile.webp"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"BRASILIA",            year:"1978/1978", color:"Branca",  hex:"#f0f2f5", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/brasilia.jpeg"},
-  {brand:"Hyundai",   bk:"outros",     model:"HR HDB",              year:"2012/2013", color:"Branca",  hex:"#f0f2f5", fuel:"diesel",   extra:null,        classic:false, img:"imagens/hyundaihr.webp"},
-  {brand:"Fiat",      bk:"fiat",       model:"UNO VIVACE 1.0",      year:"2010/2011", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/unovivace.jpeg"},
-  {brand:"Volkswagen",bk:"volkswagen", model:"SAVEIRO 1.6 CS",      year:"2010/2011", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/saveiro.jpeg"},
-  {brand:"Nissan",    bk:"outros",     model:"VERSA 16SV CVT",      year:"2017/2018", color:"Cinza",   hex:"#9ba3b0", fuel:"flex",     extra:null,        classic:false, img:"imagens/versa.webp"},
-  {brand:"Ford",      bk:"ford",       model:"MAVERICK",            year:"1978/1979", color:"Verde",   hex:"#27ae60", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/maverick.jpeg"}
+  {brand:"Ford",      bk:"ford",       model:"FOCUS TI AT 2.0 H",   year:"2014/2015", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:"Importado", classic:false, img:"imagens/imagens/focus.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"GOL TL",               year:"2018/2018", color:"Cinza",   hex:"#9ba3b0", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/gol.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"SAVEIRO 1.6 SURF",     year:"2009/2010", color:"Vermelha",hex:"#c0392b", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/saveiro surf.webp"},
+  {brand:"GM",        bk:"chevrolet",  model:"S10 ADVANTAGE S",      year:"2009/2009", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/s10.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"FUSCA 1500",           year:"1972/1972", color:"Verde",   hex:"#27ae60", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/imagens/fusca.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"KOMBI",                year:"2011/2012", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/kombi.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"GOL GLS 2.0 MI",      year:"1998/1998", color:"Cinza",   hex:"#9ba3b0", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/imagens/golgls2.0mi.webp"},
+  {brand:"Mitsubishi",bk:"mitsubishi", model:"PAJERO TR4 FLEX HP",  year:"2013/2013", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/pajero.webp"},
+  {brand:"Renault",   bk:"outros",     model:"DUSTER 16 E 4X2",     year:"2012/2013", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/duster.webp"},
+  {brand:"Chevrolet", bk:"chevrolet",  model:"ONIX 1.4 LT",         year:"2016/2017", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:"Vendido",        classic:false, img:"imagens/imagens/onix.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"FOX ROCK RIO MB",     year:"2015/2016", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:"Ed. Especial",classic:false,img:"imagens/imagens/fox.webp"},
+  {brand:"Peugeot",   bk:"outros",     model:"504 GRD",             year:"1995/1996", color:"Vermelha",hex:"#c0392b", fuel:"diesel",   extra:null,        classic:true,  img:"imagens/imagens/peugeot504.webp"},
+  {brand:"Fiat",      bk:"fiat",       model:"PUNTO ATTRACTIVE",    year:"2016/2016", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/puntoprata.webp"},
+  {brand:"Fiat",      bk:"fiat",       model:"PUNTO ATTRACTIVE",    year:"2011/2011", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/puntopreto.webp"},
+  {brand:"BMW",       bk:"outros",     model:"X1 SDRIVE 1.8I",      year:"2011/2011", color:"Preta",   hex:"#1a1a1a", fuel:"gasolina", extra:null,        classic:false, img:"imagens/imagens/bmwx1.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"VOYAGE MPI",          year:"2022/2023", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/voyagempi.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"JETTA HL AE",         year:"2016/2016", color:"Branca",  hex:"#f0f2f5", fuel:"gasolina", extra:null,        classic:false, img:"imagens/imagens/jetta.webp"},
+  {brand:"Chevrolet", bk:"chevrolet",  model:"CRUZE LT NB",         year:"2012/2012", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/cruze.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"GOL 1.0 NOVO",        year:"2013/2013", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/goltl.webp"},
+  {brand:"Mitsubishi",bk:"mitsubishi", model:"ASX 2.0 4WD",         year:"2013/2013", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/asx.webp"},
+  {brand:"GM",        bk:"chevrolet",  model:"CELTA 2P SPIRIT",     year:"2007/2008", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/celta.webp"},
+  {brand:"Kia Motors",bk:"outros",     model:"UK2500 HD SC",        year:"2013/2014", color:"Branca",  hex:"#f0f2f5", fuel:"diesel",   extra:null,        classic:false, img:"imagens/imagens/hb20.webp"},
+  {brand:"Hyundai",   bk:"outros",     model:"TUCSON GLSB",         year:"2012/2013", color:"Prata",   hex:"#c0c8d0", fuel:"gasolina", extra:null,        classic:false, img:"imagens/imagens/tucson.webp"},
+  {brand:"GM",        bk:"chevrolet",  model:"MERIVA PREMIUM",      year:"2010/2011", color:"Verde",   hex:"#27ae60", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/meriva.webp"},
+  {brand:"GM",        bk:"chevrolet",  model:"MERIVA PREMIUM",      year:"2008/2008", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/merivapreto.webp"},
+  {brand:"Chevrolet", bk:"chevrolet",  model:"AGILE LTZ",           year:"2012/2013", color:"Cinza",   hex:"#9ba3b0", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/agile.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"BRASILIA",            year:"1978/1978", color:"Branca",  hex:"#f0f2f5", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/imagens/brasilia.webp"},
+  {brand:"Hyundai",   bk:"outros",     model:"HR HDB",              year:"2012/2013", color:"Branca",  hex:"#f0f2f5", fuel:"diesel",   extra:null,        classic:false, img:"imagens/imagens/hyundaihr.webp"},
+  {brand:"Fiat",      bk:"fiat",       model:"UNO VIVACE 1.0",      year:"2010/2011", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/unovivace.webp"},
+  {brand:"Volkswagen",bk:"volkswagen", model:"SAVEIRO 1.6 CS",      year:"2010/2011", color:"Prata",   hex:"#c0c8d0", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/saveiro.webp"},
+  {brand:"Nissan",    bk:"outros",     model:"VERSA 16SV CVT",      year:"2017/2018", color:"Cinza",   hex:"#9ba3b0", fuel:"flex",     extra:null,        classic:false, img:"imagens/imagens/versa.webp"},
+  {brand:"Ford",      bk:"ford",       model:"MAVERICK",            year:"1978/1979", color:"Verde",   hex:"#27ae60", fuel:"gasolina", extra:null,        classic:true,  img:"imagens/imagens/maverick.webp"}
 ];
 
 var icons = {volkswagen:"🚗",chevrolet:"🛻",ford:"🚗",fiat:"🚗",mitsubishi:"🚙",outros:"🚙"};
