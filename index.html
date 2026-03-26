@@ -274,7 +274,7 @@ const vehicles = [
   {brand:"Mitsubishi",bk:"mitsubishi", model:"ASX 2.0 4WD",         year:"2013/2013", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/asx.webp"},
   {brand:"GM",        bk:"chevrolet",  model:"CELTA 2P SPIRIT",     year:"2007/2008", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/celta.webp"},
   {brand:"Hyundai",   bk:"outros",     model:"HB20 1.6",            year:"2019/2019", color:"Branca",  hex:"#f0f2f5", fuel:"flex",     extra:null,        classic:false, img:"imagens/hb20.webp"},
-  {brand:"Hyundai",   bk:"outros",     model:"TUCSON GLSB",         year:"2012/2013", color:"Prata",   hex:"#c0c8d0", fuel:"gasolina", extra:null,        classic:false, img:"imagens/tucson.webp"},
+  {brand:"Hyundai",   bk:"outros",     model:"TUCSON GLSB",         year:"2012/2013", color:"Prata",   hex:"#c0c8d0", fuel:"gasolina", extra:null,        classic:false, img:"imagens/tucson.webp", photos:["imagens/tucson.webp","imagens/Tucson/1.webp","imagens/Tucson/2.webp","imagens/Tucson/3.webp","imagens/Tucson/4.webp","imagens/Tucson/5.webp","imagens/Tucson/6.webp","imagens/Tucson/7.webp","imagens/Tucson/8.webp"]},
   {brand:"GM",        bk:"chevrolet",  model:"MERIVA PREMIUM",      year:"2010/2011", color:"Verde",   hex:"#27ae60", fuel:"flex",     extra:null,        classic:false, img:"imagens/meriva.webp"},
   {brand:"GM",        bk:"chevrolet",  model:"MERIVA PREMIUM",      year:"2008/2008", color:"Preta",   hex:"#1a1a1a", fuel:"flex",     extra:null,        classic:false, img:"imagens/merivapreto.webp"},
   {brand:"Chevrolet", bk:"chevrolet",  model:"AGILE LTZ",           year:"2012/2013", color:"Cinza",   hex:"#9ba3b0", fuel:"flex",     extra:null,        classic:false, img:"imagens/agile.webp"},
@@ -311,10 +311,30 @@ function buildCard(v, i) {
   var classic = v.classic ? '<div class="badge-classic">Classico</div>' : "";
   var idx = vehicles.indexOf(v);
   var delay = (i * 0.03).toFixed(2);
-  var imgHtml = v.img ? '<img src="' + v.img + '" alt="' + v.brand + '" loading="lazy">' : '<div class="img-placeholder">&#x1F697;</div>';
+
+  // Build image area - slider if multiple photos, single if not
+  var imgArea = "";
+  if (v.photos && v.photos.length > 1) {
+    var dots = v.photos.map(function(_, pi) {
+      return '<button class="slider-dot' + (pi===0?' active':'') + '" onclick="event.stopPropagation();slideTo(' + idx + ',' + pi + ')"></button>';
+    }).join('');
+    var imgs = v.photos.map(function(src) {
+      return '<img src="' + src + '" alt="' + v.brand + '" loading="lazy">';
+    }).join('');
+    imgArea = '<div class="slider-wrap" id="slider-' + idx + '">'
+      + '<div class="slider-track" id="track-' + idx + '">' + imgs + '</div>'
+      + '<button class="slider-btn slider-prev" onclick="event.stopPropagation();slideDir(' + idx + ',-1)">&#8249;</button>'
+      + '<button class="slider-btn slider-next" onclick="event.stopPropagation();slideDir(' + idx + ',1)">&#8250;</button>'
+      + '<div class="slider-dots" id="dots-' + idx + '">' + dots + '</div>'
+      + '</div>';
+  } else {
+    var src = v.img || '';
+    imgArea = '<div class="card-img-wrap">' + (src ? '<img src="' + src + '" alt="' + v.brand + '" loading="lazy">' : '<div class="img-placeholder">&#x1F697;</div>') + '</div>';
+  }
+
   return '<div class="car-card" onclick="openModal(' + idx + ')" style="animation-delay:' + delay + 's">'
     + classic
-    + '<div class="card-img-wrap">' + imgHtml + '</div>'
+    + imgArea
     + '<div class="card-overlay"><span class="link-pill">Ver detalhes &rarr;</span></div>'
     + '<div class="card-body">'
     + '<div class="card-brand-row"><span class="card-brand">' + v.brand + '</span><span class="card-year">' + v.year + '</span></div>'
@@ -326,6 +346,27 @@ function buildCard(v, i) {
     + '<div class="card-foot"><span class="fuel-tag ' + fl + '">' + flLabel + '</span>' + extra + '</div>'
     + '</div>'
     + '</div>';
+}
+
+var sliderPos = {};
+
+function slideTo(idx, pos) {
+  var track = document.getElementById('track-' + idx);
+  var dots = document.getElementById('dots-' + idx);
+  if (!track) return;
+  var total = track.children.length;
+  pos = (pos + total) % total;
+  sliderPos[idx] = pos;
+  track.style.transform = 'translateX(-' + (pos * 100) + '%)';
+  if (dots) {
+    var allDots = dots.querySelectorAll('.slider-dot');
+    allDots.forEach(function(d, i) { d.classList.toggle('active', i === pos); });
+  }
+}
+
+function slideDir(idx, dir) {
+  var pos = (sliderPos[idx] || 0) + dir;
+  slideTo(idx, pos);
 }
 
 function render() {
